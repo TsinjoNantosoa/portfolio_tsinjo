@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -5,6 +9,7 @@ import ProjectCard from "../UI/ProjectCard";
 
 const Projects: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+<<<<<<< HEAD
 
   // === Projets depuis ton CV ===
   const projects = [
@@ -16,10 +21,23 @@ const Projects: React.FC = () => {
       technologies: ["Kafka", "Spark", "AWS S3", "Docker"],
       imageUrl: "/public/portfolio-uploads/iot-pipeline.png",
       githubLink: "https://github.com/ton-projet-iot",
+=======
+  
+  const projects = [
+    {
+      number: "01",
+      title: "Frontend Project",
+      description: "A modern e-commerce website built with React and TailwindCSS.",
+      technologies: ["HTML5", "CSS3", "JavaScript"],
+      imageUrl: "/public/lovable-uploads/a1854c67-43af-43d1-ba2d-1df6a980ca68.png",
+      // demoLink: "https://demo.example.com",
+      githubLink: "https://github.com",
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44
       isHighlighted: true,
     },
     {
       number: "02",
+<<<<<<< HEAD
       title: "Pipeline ETL Orchestré (Airflow/PostgreSQL)",
       description:
         "Extraction API → Producteur Kafka Python → Orchestration Airflow → PostgreSQL. Déploiement Docker Compose.",
@@ -68,6 +86,43 @@ const Projects: React.FC = () => {
     setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
   };
 
+=======
+      title: "Data Analysis Dashboard",
+      description: "An interactive dashboard for visualizing complex data sets.",
+      technologies: ["Python", "Pandas", "D3.js"],
+      imageUrl: "/public/lovable-uploads/a9b755fb-3be0-41b9-bd78-854f712f5b36.png",
+      // demoLink: "https://demo.example.com",
+      githubLink: "https://github.com",
+    },
+    {
+      number: "03",
+      title: "Machine Learning API",
+      description: "A RESTful API that provides machine learning predictions.",
+      technologies: ["Python", "TensorFlow", "Flask"],
+      imageUrl: "/public/lovable-uploads/866d7073-6a3d-4781-8bfa-a33170dd02a4.png",
+      // demoLink: "https://demo.example.com",
+      githubLink: "https://github.com",
+    },
+    {
+      number: "04",
+      title: "Backend Service",
+      description: "A microservice architecture built with Spring Boot.",
+      technologies: ["Java", "Spring Boot", "PostgreSQL"],
+      imageUrl: "/public/lovable-uploads/2a53418f-2a7c-4d60-84d5-3771b331e01c.png",
+      // demoLink: "https://demo.example.com",
+      githubLink: "https://github.com",
+    },
+  ];
+  
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
+  };
+  
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
+  };
+  
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44
   return (
     <section className="py-20">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
@@ -82,6 +137,7 @@ const Projects: React.FC = () => {
             My <span className="text-neon">Projects</span>
           </h2>
           <p className="text-white/70">
+<<<<<<< HEAD
             Academic and personal projects that showcase my skills in{" "}
             <span className="text-neon">Data Engineering</span>,{" "}
             <span className="text-neon">Machine Learning</span> and{" "}
@@ -125,6 +181,37 @@ const Projects: React.FC = () => {
 
           {/* Controls */}
           {projects.length > projectsPerSlide && (
+=======
+            Here are some of my recent projects that showcase my skills and
+            expertise in web development and data science.
+          </p>
+        </motion.div>
+        
+        <div className="lg:hidden">
+          {/* Mobile slider */}
+          <div className="relative overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {projects.map((project, index) => (
+                <div key={index} className="w-full flex-shrink-0 px-4">
+                  <ProjectCard
+                    number={project.number}
+                    title={project.title}
+                    description={project.description}
+                    technologies={project.technologies}
+                    imageUrl={project.imageUrl}
+                    // demoLink={project.demoLink}
+                    githubLink={project.githubLink}
+                    isHighlighted={project.isHighlighted}
+                    index={index}
+                  />
+                </div>
+              ))}
+            </div>
+            
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44
             <div className="mt-6 flex justify-center gap-2">
               <button
                 onClick={prevSlide}
@@ -141,7 +228,29 @@ const Projects: React.FC = () => {
                 <ChevronRight className="h-5 w-5 text-black" />
               </button>
             </div>
+<<<<<<< HEAD
           )}
+=======
+          </div>
+        </div>
+        
+        {/* Desktop grid */}
+        <div className="hidden grid-cols-1 gap-6 lg:grid lg:grid-cols-2">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              number={project.number}
+              title={project.title}
+              description={project.description}
+              technologies={project.technologies}
+              imageUrl={project.imageUrl}
+              // demoLink={project.demoLink}
+              githubLink={project.githubLink}
+              isHighlighted={project.isHighlighted}
+              index={index}
+            />
+          ))}
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44
         </div>
       </div>
     </section>

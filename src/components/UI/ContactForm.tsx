@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import { Send } from "lucide-react";
 import Button from "./Button";
+=======
+
+import React, { useState } from "react";
+import Button from "./Button";
+import { Send } from "lucide-react";
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44
 import { toast } from "sonner";
 
 const ContactForm: React.FC = () => {
@@ -26,6 +33,7 @@ const ContactForm: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
+<<<<<<< HEAD
     try {
       console.log("Sending form data:", formData);
       const response = await fetch('http://localhost:8081/api/contacts', {
@@ -60,11 +68,28 @@ const ContactForm: React.FC = () => {
     } finally {
       setIsSubmitting(false);
     }
+=======
+    // Simulate form submission
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    
+    toast.success("Message sent successfully! I'll get back to you soon.");
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      service: "",
+      message: "",
+    });
+    
+    setIsSubmitting(false);
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44
   };
   
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+<<<<<<< HEAD
         <input
           type="text"
           name="firstName"
@@ -141,6 +166,97 @@ const ContactForm: React.FC = () => {
         <Send size={16} />
         Send message
       </Button>
+=======
+        <div>
+          <input
+            type="text"
+            name="firstName"
+            placeholder="Firstname"
+            value={formData.firstName}
+            onChange={handleChange}
+            required
+            className="w-full rounded-md border border-white/10 bg-darkcard px-4 py-3 text-white placeholder-white/50 focus:border-neon focus:outline-none focus:ring-1 focus:ring-neon"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Lastname"
+            value={formData.lastName}
+            onChange={handleChange}
+            required
+            className="w-full rounded-md border border-white/10 bg-darkcard px-4 py-3 text-white placeholder-white/50 focus:border-neon focus:outline-none focus:ring-1 focus:ring-neon"
+          />
+        </div>
+      </div>
+      
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email address"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full rounded-md border border-white/10 bg-darkcard px-4 py-3 text-white placeholder-white/50 focus:border-neon focus:outline-none focus:ring-1 focus:ring-neon"
+          />
+        </div>
+        <div>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone number"
+            value={formData.phone}
+            onChange={handleChange}
+            className="w-full rounded-md border border-white/10 bg-darkcard px-4 py-3 text-white placeholder-white/50 focus:border-neon focus:outline-none focus:ring-1 focus:ring-neon"
+          />
+        </div>
+      </div>
+      
+      <div>
+        <select
+          name="service"
+          value={formData.service}
+          onChange={handleChange}
+          className="w-full appearance-none rounded-md border border-white/10 bg-darkcard px-4 py-3 text-white focus:border-neon focus:outline-none focus:ring-1 focus:ring-neon"
+        >
+          <option value="" disabled>
+            Select a service
+          </option>
+          <option value="web-development">Web Development</option>
+          <option value="backend-development">Backend Development</option>
+          <option value="data-science">Data Science</option>
+          <option value="machine-learning">Machine Learning</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      
+      <div>
+        <textarea
+          name="message"
+          rows={5}
+          placeholder="Type your message here..."
+          value={formData.message}
+          onChange={handleChange}
+          required
+          className="w-full rounded-md border border-white/10 bg-darkcard px-4 py-3 text-white placeholder-white/50 focus:border-neon focus:outline-none focus:ring-1 focus:ring-neon"
+        ></textarea>
+      </div>
+      
+      <div>
+        <Button
+          type="submit"
+          className="w-auto px-6 py-3"
+          disabled={isSubmitting}
+          isLoading={isSubmitting}
+          icon={<Send size={16} />}
+        >
+          Send message
+        </Button>
+      </div>
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44
     </form>
   );
 };

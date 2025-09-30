@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { IconType } from "react-icons";
+<<<<<<< HEAD
 import { FaJava, FaReact, FaPython } from "react-icons/fa";
 import {
   SiCplusplus,
@@ -104,6 +105,45 @@ const Resume: React.FC = () => {
     { name: "Malgache", level: "Natif" },
     { name: "Français", level: "Courant" },
     { name: "Anglais", level: "Professionnel" }
+=======
+import { FaJava, FaReact, FaPython, FaDatabase, FaNodeJs } from "react-icons/fa";
+import { SiCplusplus, SiTailwindcss, SiSpringboot, SiNestjs, SiMongodb, SiPostgresql, SiMysql, SiJavascript, SiTensorflow, SiTableau,SiTypescript } from "react-icons/si";
+import ExperienceCard from "../UI/ExperienceCard";
+
+const skillIcons: { [key: string]: IconType } = {
+  Java: FaJava,
+  "C++": SiCplusplus,
+  Python: FaPython,
+  TypeScript: SiTypescript,
+  TailwindCSS: SiTailwindcss,
+  "Spring Boot": SiSpringboot,
+  NestJS: SiNestjs,
+  MySQL: SiMysql,
+  PostgreSQL: SiPostgresql,
+  MongoDB: SiMongodb,
+  JavaScript: SiJavascript,
+  "React.js": FaReact,
+  "Machine Learning": SiTensorflow,
+  "Deep Learning": SiTensorflow,
+  "Data Analysis": SiTableau,
+};
+
+
+const Resume: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<"experience" | "education" | "skills" | "about">("experience");
+  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
+
+  const experience = [
+    { period: "2o24", title: "Full Stack Developer", company: "personal project.", isActive: true },
+    { period: "Summer 2021", title: "Front-End Developer with react js", company: "personal project", isActive: false },
+    { period: "2024 - 2025", title: " Web Developer", company: "E-commerce", isActive: false },
+    { period: "2025", title: "", company: "Backend developer", isActive: false },
+  ];
+
+  const education = [
+    { period: "2024", title: "BSc in Applied Mathematics, Computer Science, and Statistics", company: "MISA, University of Antananarivo", isActive: true },
+    { period: "2024 - 2025 (Ongoing)", title: "MSc in Applied Mathematics, Computer Science, and Statistics", company: "MISA, University of Antananarivo", isActive: false },
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44
   ];
 
   const skills = Object.keys(skillIcons);
@@ -112,6 +152,7 @@ const Resume: React.FC = () => {
     <section className="py-20">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-5">
+<<<<<<< HEAD
           {/* Sidebar */}
           <div className="lg:col-span-2">
             <motion.div
@@ -125,6 +166,19 @@ const Resume: React.FC = () => {
               </h2>
               <div className="space-y-3">
                 {["profile", "experience", "education", "skills", "projects", "certifications", "languages"].map((tab) => (
+=======
+          <div className="lg:col-span-2">
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+              <h2 className="mb-6 text-3xl font-bold">
+                Why hire <span className="text-neon">me?</span>
+              </h2>
+              <p className="mb-8 text-white/70">
+                With extensive experience in full-stack development and data science, I bring technical expertise and creative problem-solving skills to every project.
+              </p>
+
+              <div className="space-y-3">
+                {["experience", "education", "skills", "about"].map((tab) => (
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44
                   <button
                     key={tab}
                     className={`w-full rounded-md px-4 py-3 text-left transition-all ${
@@ -139,6 +193,7 @@ const Resume: React.FC = () => {
             </motion.div>
           </div>
 
+<<<<<<< HEAD
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -179,6 +234,20 @@ const Resume: React.FC = () => {
                     isActive={item.isActive}
                     index={index}
                   />
+=======
+          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="lg:col-span-3">
+            <h3 className="mb-6 text-2xl font-bold">
+              {activeTab === "experience" && "My experience"}
+              {activeTab === "education" && "My education"}
+              {activeTab === "skills" && "My skills"}
+              {activeTab === "about" && "About me"}
+            </h3>
+
+            {activeTab === "experience" && (
+              <div className="space-y-4">
+                {experience.map((item, index) => (
+                  <ExperienceCard key={index} period={item.period} title={item.title} company={item.company} isActive={item.isActive} index={index} />
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44
                 ))}
               </div>
             )}
@@ -186,6 +255,7 @@ const Resume: React.FC = () => {
             {activeTab === "education" && (
               <div className="space-y-4">
                 {education.map((item, index) => (
+<<<<<<< HEAD
                   <ExperienceCard
                     key={index}
                     period={item.period}
@@ -194,6 +264,9 @@ const Resume: React.FC = () => {
                     isActive={item.isActive}
                     index={index}
                   />
+=======
+                  <ExperienceCard key={index} period={item.period} title={item.title} company={item.company} isActive={item.isActive} index={index} />
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44
                 ))}
               </div>
             )}
@@ -232,6 +305,7 @@ const Resume: React.FC = () => {
               </div>
             )}
 
+<<<<<<< HEAD
             {activeTab === "certifications" && (
               <ul className="list-disc pl-6 text-white/70 space-y-2">
                 {certifications.map((cert, i) => (
@@ -248,6 +322,20 @@ const Resume: React.FC = () => {
                   </li>
                 ))}
               </ul>
+=======
+            {activeTab === "about" && (
+              <div className="rounded-lg bg-darkcard p-6">
+                <p className="mb-4 text-white/70">
+                  I'm Sandaniaina Tsinjo Nantosoa, a passionate full-stack developer and data scientist with a love for solving complex problems.
+                </p>
+                <p className="mb-4 text-white/70">
+                  My journey in tech began with Java and C++, but I quickly expanded my skills to include modern web technologies and data science.
+                </p>
+                <p className="text-white/70">
+                  When I'm not coding, I enjoy contributing to open-source projects, mentoring junior developers, and learning new technologies.
+                </p>
+              </div>
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44
             )}
           </motion.div>
         </div>

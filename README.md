@@ -2,7 +2,11 @@
 
 ## Project info
 
+<<<<<<< HEAD
 **URL**: https://portfolio.dev/projects/2ae32a45-0028-4db4-975e-337f82375fab
+=======
+**URL**: https://lovable.dev/projects/2ae32a45-0028-4db4-975e-337f82375fab
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44
 
 ## How can I edit this code?
 
@@ -10,7 +14,11 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
+<<<<<<< HEAD
 Simply visit the [Lovable Project](https://portfolio.dev/projects/2ae32a45-0028-4db4-975e-337f82375fab) and start prompting.
+=======
+Simply visit the [Lovable Project](https://lovable.dev/projects/2ae32a45-0028-4db4-975e-337f82375fab) and start prompting.
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44
 
 Changes made via Lovable will be committed automatically to this repo.
 
@@ -62,8 +70,16 @@ This project is built with .
 
 ## How can I deploy this project?
 
+<<<<<<< HEAD
 Simply open [Lovable](https://portfolio.dev/projects/2ae32a45-0028-4db4-975e-337f82375fab) and click on Share -> Publish.
 
 ## I want to use a custom domain - is that possible?
 
 We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.portfolio.dev/tips-tricks/custom-domain/)
+=======
+Simply open [Lovable](https://lovable.dev/projects/2ae32a45-0028-4db4-975e-337f82375fab) and click on Share -> Publish.
+
+## I want to use a custom domain - is that possible?
+
+We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44

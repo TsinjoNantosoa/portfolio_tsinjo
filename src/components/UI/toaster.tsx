@@ -6,7 +6,11 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
+<<<<<<< HEAD
 } from "../UI/toast"
+=======
+} from "@/components/ui/toast"
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44
 
 export function Toaster() {
   const { toasts } = useToast()
@@ -15,6 +19,7 @@ export function Toaster() {
     <ToastProvider>
       {toasts.map(function ({ id, title, description, action, ...props }) {
         return (
+<<<<<<< HEAD
           <Toast key={id} {...props} className="bg-gray-800 text-white p-4 rounded-lg shadow-lg">
             <div className="grid gap-2">
               {title && <ToastTitle className="text-lg font-bold">{title}</ToastTitle>}
@@ -28,6 +33,21 @@ export function Toaster() {
         )
       })}
       <ToastViewport className="fixed bottom-0 right-0 m-4" />
+=======
+          <Toast key={id} {...props}>
+            <div className="grid gap-1">
+              {title && <ToastTitle>{title}</ToastTitle>}
+              {description && (
+                <ToastDescription>{description}</ToastDescription>
+              )}
+            </div>
+            {action}
+            <ToastClose />
+          </Toast>
+        )
+      })}
+      <ToastViewport />
+>>>>>>> a11d90a2e344754d04085594c87810099c858c44
     </ToastProvider>
   )
 }
